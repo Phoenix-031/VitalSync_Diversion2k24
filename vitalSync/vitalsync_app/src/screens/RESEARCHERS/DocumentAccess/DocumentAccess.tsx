@@ -1,3 +1,4 @@
+/* eslint-disable react-native/no-inline-styles */
 import {StyleSheet, Text, View, FlatList} from 'react-native';
 import React from 'react';
 
@@ -11,8 +12,12 @@ import {userAccessData} from '../../../data/userAccessData';
 const DocumentAccess = () => {
   return (
     <View style={styles.mainContainer}>
-      <Text>DocumentAccess</Text>
-      <View>
+      <Text style={{fontSize: 25}}>DocumentAccess</Text>
+      <View
+        style={{
+          marginVertical: 20,
+          paddingVertical: 15,
+        }}>
         <FlatList
           data={userAccessData}
           renderItem={({item}) => (

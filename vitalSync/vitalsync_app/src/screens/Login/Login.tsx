@@ -35,6 +35,10 @@ const Login = () => {
     // console.log('address', address);
     if (address?.length > 5) {
       setWalletAddress(address);
+
+      // if (address === '0x55184A2Ce702AEE30E39D7Ecc01135a44ceB306F'){
+      //   setResear
+      // }
       navigation.navigate(SCREENS.Main);
       //   console.log('address', address);
     }

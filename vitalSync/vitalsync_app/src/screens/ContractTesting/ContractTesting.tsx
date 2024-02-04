@@ -25,38 +25,40 @@ const ContractTesting = () => {
   );
   //   console.log(contract?.abi);
 
-  //   const {data, isLoading, error} = useContractRead(contract, 'checkUser', [
+  //   const {
+  //     data,
+  //     isLoading: something,
+  //     error: somethingnot,
+  //   } = useContractRead(contract, 'checkRole', [
   //     '0x6455914457c2da0cb124375b79be997f70b8970e',
   //   ]);
 
-  // if (isLoading) {
-  //   console.log('loading');
-  // } else if (error) {
-  //   console.log('error', error);
-  // } else {
-  //   console.log('data', data);
-  // }
+  //   if (something) {
+  //     console.log('loading');
+  //   } else if (somethingnot) {
+  //     console.log('error', somethingnot);
+  //   } else {
+  //     console.log('data', data);
+  //   }
 
   const {mutateAsync, isLoading, error} = useContractWrite(
     contract,
     'userRegister',
   );
 
-  //   mutateAsync({
-  //     args: [0x6455914457c2da0cb124375b79be997f70b8970e, 1234],
-  //   });
-
   return (
     <View style={contracttesting.contractcontainer}>
       <Text>Contract Testing</Text>
-      {/* <Web3Button
-        contractAddress={CONTRACT_ADDRESS}
+      <Web3Button
+        contractAddress={'0x709aff9b48349a118ececda069343877992f1c0b'}
         // Calls the "setName" function on your smart contract with "My Name" as the first argument
         action={() =>
-
+          mutateAsync({
+            args: ['0x6455914457c2da0cb124375b79be997f70b8970e', 1234],
+          })
         }>
         Send Transaction
-      </Web3Button> */}
+      </Web3Button>
     </View>
   );
 };

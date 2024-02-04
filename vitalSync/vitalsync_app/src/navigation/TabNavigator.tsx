@@ -58,7 +58,7 @@ export const HomeTabNavigator = () => {
         }}
       />
 
-      {isResearcher && (
+      {isResearcher && !isNormalUser && (
         <Tab.Screen
           name={SCREENS.Researcher}
           component={ResearcherDashboard}

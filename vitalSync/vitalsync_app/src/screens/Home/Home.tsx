@@ -8,7 +8,7 @@ const Home = () => {
   return (
     <View style={styles.mainContainer}>
       <Text>Home</Text>
-      <ContractTesting />
+      {/* <ContractTesting /> */}
     </View>
   );
 };

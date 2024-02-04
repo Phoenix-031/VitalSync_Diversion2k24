@@ -21,7 +21,12 @@ const MedicalStore = () => {
         <Text style={{fontSize: 18}}>Get medicines at your doorstep </Text>
       </View>
 
-      <View style={{width: '100%', marginBottom: 10}}>
+      <View
+        style={{
+          width: '100%',
+          marginBottom: 15,
+          paddingVertical: 15,
+        }}>
         <FlatList
           data={[
             {
@@ -82,7 +87,7 @@ const styles = StyleSheet.create({
     padding: 15,
     width: '100%',
     paddingVertical: 10,
-    marginVertical: 8,
+    marginVertical: 5,
     borderWidth: 1,
     borderColor: 'gray',
   },

@@ -1,23 +1,28 @@
 import {create} from 'zustand';
 
 interface CounterStore {
-  count: number;
   isNormalUser: boolean;
+  isDoctor: boolean;
   setWalletAddress: (address: string) => void;
   walletAddress: string | null;
   isResearcher: boolean;
-  increment: () => void;
-  decrement: () => void;
+  setResearcher: () => void;
+  setDoctor: () => void;
+  setNormalUser: () => void;
 }
 
 const useStore = create<CounterStore>(set => ({
-  isResearcher: true,
+  isDoctor: false,
+  isResearcher: false,
   isNormalUser: true,
   walletAddress: null,
+  setNormalUser: () =>
+    set(state => ({...state, isNormalUser: !state.isNormalUser})),
+  setResearcher: () =>
+    set(state => ({...state, isResearcher: !state.isResearcher})),
+  setDoctor: () => set(state => ({...state, isDoctor: !state.isDoctor})),
+
   setWalletAddress: (address: string) => set({walletAddress: address}),
-  count: 0,
-  increment: () => set(state => ({count: state.count + 1})),
-  decrement: () => set(state => ({count: state.count - 1})),
 }));
 
 export default useStore;
