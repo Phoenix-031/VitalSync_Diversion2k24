@@ -26,4 +26,5 @@ export enum SCREENS {
   'ResearchFindings' = 'ResearchFindings',
   'Wallet' = 'Wallet',
   'MedicalStore' = 'MedicalStore',
+  'ViewRequests' = 'ViewRequests',
 }

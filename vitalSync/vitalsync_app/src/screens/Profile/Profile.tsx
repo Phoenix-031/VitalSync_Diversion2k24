@@ -4,7 +4,7 @@
 import {Pressable, ScrollView, StyleSheet, Text, View} from 'react-native';
 import React from 'react';
 
-import {Button, Avatar} from 'react-native-paper';
+import {Button, Avatar, TextInput} from 'react-native-paper';
 
 import {THEME} from '../../utils/theme';
 
@@ -26,6 +26,8 @@ const Profile = () => {
   const navigation = useNavigation();
 
   const {isNormalUser, isResearcher, walletAddress} = useStore();
+
+  const [abhaId, setAbhaId] = React.useState('');
 
   const handleStoreFront = () => {
     navigation.navigate(SCREENS.MedicalStore);
@@ -59,6 +61,23 @@ const Profile = () => {
 
         <View style={styles.avatarImg}>
           <Avatar.Image size={50} source={prof} />
+        </View>
+
+        <View
+          style={{
+            width: '100%',
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            paddingHorizontal: 10,
+            marginBottom: 10,
+          }}>
+          <TextInput
+            label="Enter Abha ID"
+            value={abhaId}
+            onChangeText={text => setAbhaId(text)}
+            style={{width: '90%'}}
+          />
         </View>
 
         <View
@@ -183,6 +202,29 @@ const Profile = () => {
               onPress={() => navigation.navigate(SCREENS.ResearchFindings)}>
               View
             </Button>
+          </View>
+        )}
+
+        {walletAddress === '0x93BdA32F17f908C6a80f711aDCAeb686e68FE217' && (
+          <View>
+            <View
+              style={{
+                width: '100%',
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center',
+                padding: 10,
+                flexDirection: 'row',
+                gap: 12,
+              }}>
+              <Text>View Requests from Researchers</Text>
+              <Button
+                mode="outlined"
+                uppercase
+                onPress={() => navigation.navigate(SCREENS.ViewRequests)}>
+                View
+              </Button>
+            </View>
           </View>
         )}
       </ScrollView>

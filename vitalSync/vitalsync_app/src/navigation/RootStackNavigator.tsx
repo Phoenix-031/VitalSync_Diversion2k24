@@ -24,6 +24,7 @@ import {DoctorOnboard} from '../screens/HOSPITALS/Doctors';
 import {DocumentAccess} from '../screens/RESEARCHERS/DocumentAccess';
 import {ResearchFindings} from '../screens/USER/ResearchFindings';
 import {MedicalStore} from '../screens/MedicalStore';
+import {ViewRequests} from '../screens/USER/ViewRequests';
 
 const RootStack = createNativeStackNavigator();
 
@@ -56,6 +57,11 @@ const RootStackNavigator = () => {
         <RootStack.Screen
           name={SCREENS.MedicalStore}
           component={MedicalStore}
+        />
+
+        <RootStack.Screen
+          name={SCREENS.ViewRequests}
+          component={ViewRequests}
         />
 
         {/* RESEARCHER ONBOARD AND DOCTOR ONBOARD SCREEN */}
