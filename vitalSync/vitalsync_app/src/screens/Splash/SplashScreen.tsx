@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import {StyleSheet, Text, View} from 'react-native';
+import {Image, StyleSheet, Text, View} from 'react-native';
 import React from 'react';
 
 import {ImageBackground} from 'react-native';
@@ -12,33 +12,46 @@ import docimg from '../../assets/doctorimg.jpeg';
 
 import {SCREENS} from '../../utils/screens';
 
+import useStore from '../../store/store';
+import {THEME} from '../../utils/theme';
+
 const SplashScreen = () => {
   const navigation = useNavigation();
 
+  const {address} = useStore();
+
   return (
     <View style={styles.mainContainer}>
-      <ImageBackground source={docimg} style={styles.imgContainer}>
-        <View style={styles.textContainer}>
-          <Text style={styles.textOne}>Welcome to</Text>
+      {/* <ImageBackground source={docimg} style={styles.imgContainer}> */}
+      <View style={styles.textContainer}>
+        <Text style={styles.textOne}>Welcome to</Text>
 
-          <Text style={styles.textTwo}>Vital Sync</Text>
+        <Text style={styles.textTwo}>Vital Sync</Text>
 
-          <View style={styles.catchline}>
-            <Text style={styles.textCatch}>
-              Your Health, Your Data, Your Control,
-            </Text>
-            <Text style={styles.textCatch}>Connecting you to quality care</Text>
-          </View>
+        <View style={styles.catchline}>
+          <Text style={styles.textCatch}>
+            Your Health, Your Data, Your Control,
+          </Text>
+          <Text style={styles.textCatch}>Connecting you to quality care</Text>
         </View>
+      </View>
 
-        <View style={styles.buttonContainer}>
-          <Button
-            mode="contained"
-            onPress={() => navigation.navigate(SCREENS.Login)}>
-            On board
-          </Button>
-        </View>
-      </ImageBackground>
+      <Image source={docimg} style={styles.imgContainer} />
+
+      <View style={styles.buttonContainer}>
+        <Button
+          mode="contained"
+          onPress={() => {
+            if (address) {
+              navigation.navigate(SCREENS.Main);
+            } else {
+              navigation.navigate(SCREENS.Login);
+            }
+          }}>
+          On board
+        </Button>
+      </View>
+      {/* </ImageBackground> */}
     </View>
   );
 };
@@ -51,7 +64,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     color: 'red',
-    backgroundColor: 'gray',
+    backgroundColor: THEME.COLORS.Background,
   },
   catchline: {
     display: 'flex',
@@ -74,23 +87,25 @@ const styles = StyleSheet.create({
     height: '100%',
     justifyContent: 'center',
     alignItems: 'center',
+    position: 'absolute',
+    top: '40%',
   },
   textOne: {
     fontSize: 40,
     fontWeight: 'bold',
     marginTop: 20,
-    color: 'gray',
+    color: THEME.COLORS.Textprimary,
   },
   textTwo: {
     fontSize: 35,
     fontWeight: 'bold',
     marginTop: 20,
-    color: 'gray',
+    color: THEME.COLORS.Textprimary,
   },
   textCatch: {
     fontSize: 20,
     fontWeight: 'bold',
-    color: 'gray',
+    color: THEME.COLORS.Textprimary,
   },
   buttonContainer: {
     width: '100%',

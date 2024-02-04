@@ -24,22 +24,16 @@ const App = () => {
         metamaskWallet({
           recommended: true,
         }),
-        // rainbowWallet(),
-        // walletConnect({
-        //   recommended: true,
-        // }),
         embeddedWallet({
           auth: {
             // you need to enable EmbeddedWallets under your API Key in your thirdweb dashboard:
             // https://thirdweb.com/dashboard/settings/api-keys
-            options: ['email', 'google'],
+            options: ['google'],
             // you need to add this deeplink in your allowed `Redirect URIs` under your API Key in your thirdweb dashboard:
             // https://thirdweb.com/dashboard/settings/api-keys
             redirectUrl: 'rnstarter://',
           },
         }),
-        // trustWallet(),
-        // localWallet(),
       ]}>
       {/* <AppInner /> */}
       <RootStackNavigator />

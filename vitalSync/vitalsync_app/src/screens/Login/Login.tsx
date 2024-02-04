@@ -20,26 +20,22 @@ import {useNavigation} from '@react-navigation/native';
 import {useEffect} from 'react';
 import {SCREENS} from '../../utils/screens';
 
+import useStore from '../../store/store';
+
 const Login = () => {
   const connect = useConnect();
   const address = useAddress();
 
   const navigation = useNavigation();
 
+  const {setWalletAddress} = useStore();
+
   useEffect(() => {
     // console.log('connect', connect);
     // console.log('address', address);
     if (address?.length > 5) {
+      setWalletAddress(address);
       navigation.navigate(SCREENS.Main);
-
-      Alert.alert('Alert Title', 'My Alert Msg', [
-        {
-          text: 'Cancel',
-          onPress: () => console.log('Cancel Pressed'),
-          style: 'cancel',
-        },
-        {text: 'OK', onPress: () => console.log('OK Pressed')},
-      ]);
       //   console.log('address', address);
     }
   }, [address]);

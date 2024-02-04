@@ -21,4 +21,9 @@ export enum SCREENS {
   'DoctorOnboard' = 'DoctorOnboard',
   'ResearcherOnboard' = 'ResearcherOnboard',
   'Researcher' = 'Researcher',
+  'DocumentAccess' = 'DocumentAccess',
+  'TrackHealth' = 'TrackHealth',
+  'ResearchFindings' = 'ResearchFindings',
+  'Wallet' = 'Wallet',
+  'MedicalStore' = 'MedicalStore',
 }

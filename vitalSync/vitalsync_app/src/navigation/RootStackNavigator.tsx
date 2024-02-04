@@ -21,6 +21,9 @@ import HomeTabNavigator from './TabNavigator';
 import {BloodScreen, EyeScreen} from '../screens/Organ/entities';
 import {ResearcherOnboard} from '../screens/RESEARCHERS/Researcher';
 import {DoctorOnboard} from '../screens/HOSPITALS/Doctors';
+import {DocumentAccess} from '../screens/RESEARCHERS/DocumentAccess';
+import {ResearchFindings} from '../screens/USER/ResearchFindings';
+import {MedicalStore} from '../screens/MedicalStore';
 
 const RootStack = createNativeStackNavigator();
 
@@ -41,6 +44,16 @@ const RootStackNavigator = () => {
         <RootStack.Screen name={SCREENS.EyeScreen} component={EyeScreen} />
         <RootStack.Screen name={SCREENS.BloodScreen} component={BloodScreen} />
 
+        <RootStack.Screen
+          name={SCREENS.ResearchFindings}
+          component={ResearchFindings}
+        />
+
+        <RootStack.Screen
+          name={SCREENS.MedicalStore}
+          component={MedicalStore}
+        />
+
         {/* RESEARCHER ONBOARD AND DOCTOR ONBOARD SCREEN */}
 
         <RootStack.Screen
@@ -50,6 +63,10 @@ const RootStackNavigator = () => {
         <RootStack.Screen
           name={SCREENS.DoctorOnboard}
           component={DoctorOnboard}
+        />
+        <RootStack.Screen
+          name={SCREENS.DocumentAccess}
+          component={DocumentAccess}
         />
       </RootStack.Navigator>
     </NavigationContainer>

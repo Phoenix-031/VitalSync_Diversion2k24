@@ -16,15 +16,15 @@ import AntDesign from 'react-native-vector-icons/AntDesign';
 
 import {Home} from '../screens/Home';
 import {Profile} from '../screens/Profile';
-import {Chats} from '../screens/Chats';
 import {Organ} from '../screens/Organ';
 
 import useStore from '../store/store';
 import {ResearcherDashboard} from '../screens/RESEARCHERS/ResearcherDashboard';
+import {TrackHealth} from '../screens/USER/TrackHealth';
 
 const Tab = createBottomTabNavigator();
 export const HomeTabNavigator = () => {
-  const {isResearcher} = useStore();
+  const {isResearcher, isNormalUser} = useStore();
 
   return (
     <Tab.Navigator
@@ -58,19 +58,6 @@ export const HomeTabNavigator = () => {
         }}
       />
 
-      <Tab.Screen
-        name={SCREENS.Chats}
-        component={Chats}
-        options={{
-          header: () => null,
-          tabBarIcon: ({color, size, focused}) => (
-            <CustomTabIcon focused={focused}>
-              <MaterialIcons name="message" color={color} size={size} />
-            </CustomTabIcon>
-          ),
-        }}
-      />
-
       {isResearcher && (
         <Tab.Screen
           name={SCREENS.Researcher}
@@ -80,6 +67,25 @@ export const HomeTabNavigator = () => {
             tabBarIcon: ({color, size, focused}) => (
               <CustomTabIcon focused={focused}>
                 <AntDesign name="book" color={color} size={size} />
+              </CustomTabIcon>
+            ),
+          }}
+        />
+      )}
+
+      {isNormalUser && (
+        <Tab.Screen
+          name={SCREENS.TrackHealth}
+          component={TrackHealth}
+          options={{
+            header: () => null,
+            tabBarIcon: ({color, size, focused}) => (
+              <CustomTabIcon focused={focused}>
+                <MaterialIcons
+                  name="health-and-safety"
+                  color={color}
+                  size={size}
+                />
               </CustomTabIcon>
             ),
           }}

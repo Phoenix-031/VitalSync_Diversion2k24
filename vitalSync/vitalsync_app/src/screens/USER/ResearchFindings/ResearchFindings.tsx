@@ -1,26 +1,17 @@
 import {StyleSheet, Text, View} from 'react-native';
 import React from 'react';
 
-import {Button} from 'react-native-paper';
+import {THEME} from '../../../utils/theme';
 
-import {THEME} from '../../utils/theme';
-
-const Onboard = () => {
+const ResearchFindings = () => {
   return (
     <View style={styles.mainContainer}>
-      {/* <View>
-        <Text>Are you a researcher? </Text>
-        <Text>Want to use our app for your research?</Text>
-      </View>
-
-      <View>
-        <Button>Agree</Button>
-      </View> */}
+      <Text>ResearchFindings</Text>
     </View>
   );
 };
 
-export default Onboard;
+export default ResearchFindings;
 
 const styles = StyleSheet.create({
   mainContainer: {

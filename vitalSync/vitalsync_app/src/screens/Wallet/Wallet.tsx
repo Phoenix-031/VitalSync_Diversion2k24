@@ -1,14 +1,14 @@
 import {StyleSheet, Text, View} from 'react-native';
 import React from 'react';
 
-const Dashboard = () => {
+const Wallet = () => {
   return (
     <View>
-      <Text>Dashboard</Text>
+      <Text>Wallet</Text>
     </View>
   );
 };
 
-export default Dashboard;
+export default Wallet;
 
 const styles = StyleSheet.create({});

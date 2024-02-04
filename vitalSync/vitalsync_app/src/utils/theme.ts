@@ -25,3 +25,9 @@ export const THEME = {
     '2xl': 80,
   },
 };
+
+export const STATUS = {
+  PENDING: 'yellow',
+  APPROVED: 'green',
+  REJECTED: 'red',
+};
