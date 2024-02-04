@@ -24,7 +24,7 @@ import {TrackHealth} from '../screens/USER/TrackHealth';
 
 const Tab = createBottomTabNavigator();
 export const HomeTabNavigator = () => {
-  const {isResearcher, isNormalUser} = useStore();
+  const {isResearcher, isNormalUser, walletAddress} = useStore();
 
   return (
     <Tab.Navigator
@@ -58,7 +58,7 @@ export const HomeTabNavigator = () => {
         }}
       />
 
-      {isResearcher && !isNormalUser && (
+      {walletAddress === '0x55184A2Ce702AEE30E39D7Ecc01135a44ceB306F' && (
         <Tab.Screen
           name={SCREENS.Researcher}
           component={ResearcherDashboard}

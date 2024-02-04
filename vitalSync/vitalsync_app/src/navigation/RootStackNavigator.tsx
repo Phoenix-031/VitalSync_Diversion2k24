@@ -27,7 +27,11 @@ import {MedicalStore} from '../screens/MedicalStore';
 
 const RootStack = createNativeStackNavigator();
 
+// import useStore from '../store/store';
+
 const RootStackNavigator = () => {
+  // const {walletAddress} = useStore();
+
   return (
     <NavigationContainer>
       <RootStack.Navigator

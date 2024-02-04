@@ -213,6 +213,9 @@ const styles = StyleSheet.create({
   flatComponent: {
     width: '100%',
     padding: 10,
+    marginVertical: 20,
+    paddingVertical: 15,
+    marginBottom: 150,
   },
 });
 
